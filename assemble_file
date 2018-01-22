@@ -1,0 +1,11 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: concatenation of files
+      assemble:
+        src: "{{ playbook_dir }}/files/fragments/"
+        dest: /home/centos/Dev/test.conf
+        backup: yes
+        remote_src: False
+        #delimeter: ' ### START FRAGMENT ###'
